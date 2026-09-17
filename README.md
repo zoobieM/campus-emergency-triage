@@ -35,28 +35,6 @@ App runs at `http://localhost:5173` (and on local network `http://<your-ip>:5173
 
 ---
 
-## 🛠️ Deploy to Render (Step-by-Step)
-
-### Option 1: One-Click Render Blueprint
-1. Push this repository to your **GitHub** account.
-2. Go to [Render Dashboard](https://dashboard.render.com).
-3. Click **New +** &rarr; **Blueprint**.
-4. Connect your GitHub repository (`render.yaml` will auto-configure everything).
-5. Click **Apply**.
-
-### Option 2: Standard Render Web Service
-1. In Render Dashboard, click **New +** &rarr; **Web Service**.
-2. Connect your GitHub repository.
-3. Configure the settings:
-   - **Name**: `campus-emergency-triage`
-   - **Environment**: `Node`
-   - **Build Command**: `npm install && npm run build`
-   - **Start Command**: `npm start`
-   - **Plan**: `Free`
-4. Click **Create Web Service**.
-
----
-
 ## 📋 Demonstration Accounts
 
 | Role | Name | Email | Password |
