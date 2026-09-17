@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Campus Emergency & Smart Patient Triage System — Project Summary</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    line-height: 1.55;
+    font-size: 11pt;
+  }
+
+  /* Header banner */
+  .header-card {
+    background: linear-gradient(135deg, #090d16 0%, #0f172a 100%);
+    color: #f8fafc;
+    padding: 24px 28px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    border-left: 6px solid #ef4444;
+  }
+
+  .header-tag {
+    font-size: 9pt;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #38bdf8;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .header-title {
+    font-size: 20pt;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+    color: #ffffff;
+  }
+
+  .header-subtitle {
+    font-size: 11pt;
+    color: #94a3b8;
+    max-width: 90%;
+    line-height: 1.4;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-size: 8.5pt;
+    color: #cbd5e1;
+  }
+
+  .meta-item strong {
+    color: #ffffff;
+    display: block;
+    font-size: 9.5pt;
+  }
+
+  /* Section styles */
+  h2 {
+    font-size: 13pt;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 5px;
+    margin-top: 22px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+  }
+
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 16px;
+    background-color: #ef4444;
+    margin-right: 8px;
+    border-radius: 2px;
+  }
+
+  h3 {
+    font-size: 11pt;
+    font-weight: 600;
+    color: #1e293b;
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+
+  p {
+    margin-bottom: 10px;
+    color: #334155;
+    font-size: 10pt;
+  }
+
+  /* Key Metrics & Badges */
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 8pt;
+    font-weight: 700;
+    font-family: monospace;
+    text-transform: uppercase;
+  }
+
+  .pill-red { background: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
+  .pill-amber { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+  .pill-green { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+  .pill-blue { background: #e0f2fe; color: #075985; border: 1px solid #7dd3fc; }
+
+  /* Feature Grid */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .feature-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+
+  .feature-card h4 {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .feature-card p {
+    font-size: 9pt;
+    color: #475569;
+    margin-bottom: 0;
+    line-height: 1.45;
+  }
+
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    font-size: 9pt;
+  }
+
+  th {
+    background-color: #0f172a;
+    color: #f8fafc;
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 8pt;
+  }
+
+  td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+  }
+
+  tr:nth-child(even) td {
+    background-color: #f8fafc;
+  }
+
+  ul, ol {
+    margin-left: 18px;
+    margin-bottom: 10px;
+    font-size: 9.5pt;
+    color: #334155;
+  }
+
+  li {
+    margin-bottom: 4px;
+  }
+
+  .code-block {
+    background-color: #0f172a;
+    color: #38bdf8;
+    font-family: 'Consolas', 'JetBrains Mono', monospace;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 8.5pt;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  .footer-note {
+    margin-top: 24px;
+    padding-top: 12px;
+    border-top: 1px solid #cbd5e1;
+    font-size: 8pt;
+    color: #64748b;
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<!-- Header Banner -->
+<div class="header-card">
+  <div class="header-tag">Executive Technical Report & Project Summary</div>
+  <div class="header-title">Campus Emergency & Smart Patient Triage System</div>
+  <div class="header-subtitle">
+    A unified, mission-critical incident dispatch command platform merging rapid campus tactical reporting with automated heuristic triage and dynamic medical facility routing.
+  </div>
+  <div class="meta-grid">
+    <div class="meta-item">Status: <strong>Production-Ready v2.1</strong></div>
+    <div class="meta-item">Local URL: <strong>http://localhost:5173</strong></div>
+    <div class="meta-item">Architecture: <strong>Role-Gated Hybrid</strong></div>
+    <div class="meta-item">Persistence: <strong>LocalStorage Engine</strong></div>
+  </div>
+</div>
+
+<!-- Section 1: Executive Summary -->
+<h2>1. Executive Summary & Problem Scope</h2>
+<p>
+The <strong>Campus Emergency & Smart Patient Triage System</strong> provides an enterprise-grade emergency response command platform designed specifically for university and institutional environments. The system bridges the critical time gap between incident occurrence and professional intervention by unifying two vital domains:
+</p>
+<ul>
+  <li><strong>Tactical SOS Reporting (Caller Domain):</strong> One-tap panic triggers, rich symptom reporting, and zero-delay bystander guidance.</li>
+  <li><strong>Smart Patient Triage Engine (Clinical Domain):</strong> Automated keyword heuristics, risk-factor age escalation, unit dispatch assignments, and localized facility routing.</li>
+  <li><strong>Incident Telemetry Command Center (Admin Domain):</strong> Real-time situational awareness, audio siren alerts, priority filtering, and ticket status progression (Dispatched &rarr; En Route &rarr; Resolved).</li>
+</ul>
+
+<!-- Section 2: Core Architecture & Modules -->
+<h2>2. System Modules & Functional Scope</h2>
+
+<div class="feature-grid">
+  <div class="feature-card">
+    <h4>🎓 Dual-Role Authentication System</h4>
+    <p>
+      Secure role-gated access with distinct views for <strong>Students/Callers</strong> (locked to Tactical SOS Portal & facility guides) and <strong>Administrators</strong> (full access to Command Center, ticket controls, and telemetry).
+    </p>
+  </div>
+  <div class="feature-card">
+    <h4>⚡ 1-Tap Zero-Delay Emergency Reporting</h4>
+    <p>
+      Rapid 1-tap preset triggers for <strong>Cardiac/Collapse</strong>, <strong>Severe Trauma/Bleeding</strong>, <strong>Active Fire/Smoke</strong>, and <strong>Physical Threat/Assault</strong> with instant dispatch and no manual typing required.
+    </p>
+  </div>
+  <div class="feature-card">
+    <h4>🧠 Heuristic Smart Triage Engine</h4>
+    <p>
+      Rule-based semantic parser categorizing incidents into <span class="pill pill-red">Emergency</span>, <span class="pill pill-amber">Urgent</span>, and <span class="pill pill-green">Normal</span>. Generates medical justifications and bystander first-aid checklists.
+    </p>
+  </div>
+  <div class="feature-card">
+    <h4>📍 Campus Nearest Facilities Locator</h4>
+    <p>
+      Proximity engine mapping 25 campus locations to the closest <strong>Medical Dispensary</strong>, <strong>AED Defibrillator Hub</strong>, and <strong>First-Aid Kiosks/Eyewash Stations</strong> with real-time walking distances and ETAs.
+    </p>
+  </div>
+</div>
+
+<!-- Section 3: Clinical Triage Classification Matrix -->
+<h2>3. Rule-Based Triage Classification Logic</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 15%;">Priority</th>
+      <th style="width: 32%;">Key Symptom Indicators</th>
+      <th style="width: 28%;">Units Dispatched</th>
+      <th style="width: 25%;">Immediate Protocol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="pill pill-red">Emergency</span></td>
+      <td>Unconscious, cardiac arrest, chest pain, not breathing, severe bleeding, skull trauma, fire/smoke, anaphylaxis</td>
+      <td>Campus Medical Unit (CMU-1), Campus Ambulance, Security Escort</td>
+      <td>Audio siren alert ping, instant bystander CPR/pressure guide, dispatch in &lt; 3 min</td>
+    </tr>
+    <tr>
+      <td><span class="pill pill-amber">Urgent</span></td>
+      <td>Bone fracture, deep cut/laceration, high fever (&gt;103&deg;F), fainting, asthma attack, eye chemical burn, age &le;5 or &ge;65</td>
+      <td>First-Aid Mobile Responder, Campus Medical Unit (CMU-2)</td>
+      <td>Immobilization guide, continuous vitals monitoring, prompt medical evaluation</td>
+    </tr>
+    <tr>
+      <td><span class="pill pill-green">Normal</span></td>
+      <td>Mild headache, minor abrasion, sore throat, general malaise, routine inquiry</td>
+      <td>Campus Dispensary Staff, Facilities Desk</td>
+      <td>Routing to Health Center Block C Room 102 for walk-in assessment</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<!-- Section 4: Campus Facilities & Proximity Directory -->
+<h2>4. Integrated Campus Emergency Facilities Directory</h2>
+<p>
+The system embeds a comprehensive campus infrastructure directory providing dynamic distance calculations from any selected building:
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Facility Hub</th>
+      <th>Building / Location</th>
+      <th>Key Equipment</th>
+      <th>Contact & Staff</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Central Medical Dispensary</strong></td>
+      <td>Health & Wellness Block C, Room 102</td>
+      <td>Oxygen Cylinders, IV Fluids, Suture Kits, Trauma Stretcher, Cardiac Monitor</td>
+      <td>Dr. Vikram Singh (Duty CMO) &bull; Ext. 402</td>
+    </tr>
+    <tr>
+      <td><strong>Library AED Hub 1</strong></td>
+      <td>Central Library Main Foyer</td>
+      <td>AED Defibrillator Model CR2, CPR Pads, Trauma Scissors</td>
+      <td>Ext. 108 (24/7 Security Foyer)</td>
+    </tr>
+    <tr>
+      <td><strong>Sports Complex AED Hub 2</strong></td>
+      <td>Sports Complex Physiotherapy Bay</td>
+      <td>AED Defibrillator Zoll 3, Spine Board, Ice Splints</td>
+      <td>Ext. 305 (Physio Coordinator)</td>
+    </tr>
+    <tr>
+      <td><strong>Block A First-Aid & Eyewash</strong></td>
+      <td>Block A (Engineering) 2nd Floor</td>
+      <td>Chemical Eyewash Bottle, Burn Gel, Tourniquets</td>
+      <td>Ext. 112 (Block A Desk)</td>
+    </tr>
+    <tr>
+      <td><strong>Block B Trauma Kiosk</strong></td>
+      <td>Block B 1st Floor East Lobby</td>
+      <td>Hemostatic Gauze, Cold Packs, Splint Kits</td>
+      <td>Ext. 210 (Block B Supervisor)</td>
+    </tr>
+    <tr>
+      <td><strong>Workshop Safety & Deluge Shower</strong></td>
+      <td>Mechanical Workshop Safety Bay 1</td>
+      <td>Emergency Deluge Shower, Fire Blankets, Burn Shield</td>
+      <td>Ext. 555 (Workshop Safety Desk)</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Section 5: Persistence & Live Ticket Synchronization -->
+<h2>5. Persistent Storage & Ticket Synchronization Model</h2>
+<p>
+All incident records are maintained in browser-backed persistent local storage (<code>campus_triage_incidents_v2</code>) with multi-tab storage event synchronization. 
+</p>
+<ul>
+  <li><strong>Instant Write-Through:</strong> Submissions and status transitions write to storage before UI update.</li>
+  <li><strong>Reload Synchronization Actions:</strong> Users receive explicit <em>"Reload Page to Update Ticket"</em> controls and an optional 3-second auto-reload countdown to synchronize live database state.</li>
+  <li><strong>Command Center Telemetry Reload:</strong> An administrative <em>"Reload Telemetry"</em> action in the dashboard header allows one-click data synchronization from persistent disk.</li>
+</ul>
+
+<!-- Section 6: Pre-Seeded Demonstration Accounts -->
+<h2>6. Demonstration Accounts & Access Credentials</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Role</th>
+      <th>User Name</th>
+      <th>Institutional Email</th>
+      <th>Password</th>
+      <th>Assigned Scope</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="pill pill-blue">Student</span></td>
+      <td>Priya Menon</td>
+      <td><code>priya.menon@campus.edu</code></td>
+      <td><code>Student@123</code></td>
+      <td>SOS Emergency Portal, 1-Tap Trigger, Facility Locator</td>
+    </tr>
+    <tr>
+      <td><span class="pill pill-blue">Student</span></td>
+      <td>Rahul Sharma</td>
+      <td><code>rahul.sharma@campus.edu</code></td>
+      <td><code>Rahul@456</code></td>
+      <td>SOS Emergency Portal, 1-Tap Trigger, Facility Locator</td>
+    </tr>
+    <tr>
+      <td><span class="pill pill-red">Admin</span></td>
+      <td>Dr. Vikram Singh (CMO)</td>
+      <td><code>admin@campus.edu</code></td>
+      <td><code>Admin@2024</code></td>
+      <td>Full Command Center, Telemetry Feed, Ticket Operator</td>
+    </tr>
+    <tr>
+      <td><span class="pill pill-red">Admin</span></td>
+      <td>Inspector Meera Krishnan</td>
+      <td><code>security@campus.edu</code></td>
+      <td><code>Security@999</code></td>
+      <td>Full Command Center, Telemetry Feed, Ticket Operator</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Section 7: Technology Stack & File Architecture -->
+<h2>7. Technology Architecture & Directory Layout</h2>
+<div class="code-block">
+campus-triage/
+├── src/
+│   ├── lib/
+│   │   ├── auth.js            # Dual-role credential database & session manager
+│   │   ├── triage.js          # Heuristic keyword engine & first-aid logic
+│   │   ├── facilities.js      # Campus medical facilities & AED proximity directory
+│   │   ├── store.js           # LocalStorage persistence & sync layer
+│   │   └── mockData.js        # 10 pre-loaded realistic incident cases
+│   ├── contexts/
+│   │   └── AuthContext.jsx    # Role-based auth provider & hooks
+│   ├── components/
+│   │   ├── Auth/LoginPage.jsx # Role selection, credential form & autofill
+│   │   ├── Layout/TopBar.jsx  # Live clock, user badge & session actions
+│   │   ├── SOS/               # OneTapEmergency, NearestFacilitiesCard, SOSPortal, ResultCard
+│   │   └── Dashboard/         # CommandCenter, MetricsBar, IncidentTable, IncidentRow, AlertRadar
+│   ├── hooks/useIncidents.js  # Incident telemetry, Web Audio alerts & dispatch store
+│   └── App.jsx                # Role-gated route container
+</div>
+
+<div class="footer-note">
+  <span>Campus Emergency & Smart Patient Triage System &bull; Project Summary Report</span>
+  <span>Generated on: 17-Sep-2026</span>
+</div>
+
+</body>
+</html>
